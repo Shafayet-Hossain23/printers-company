@@ -1,0 +1,21 @@
+.ulStyle li:hover {
+    /* color: rgb(220, 200, 21); */
+    color: blueviolet;
+
+
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.navlink {
+    /* color: rgb(220, 200, 21); */
+    color: blueviolet;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.logout:hover {
+    cursor: pointer;
+}
