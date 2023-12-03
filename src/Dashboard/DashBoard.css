@@ -1,3 +1,46 @@
 .dashLink {
     color: blueviolet;
 }
+
+/* dropdown menu */
+/* Dropdown.css */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    z-index: 50;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding: 0;
+    margin: 4px 0 0;
+    left: -100%;
+    /* Position the dropdown to the left */
+    min-width: max-content;
+    /* Set minimum width based on content */
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    /* Make list items fill the width of the dropdown */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.dropdown-menu li:hover {
+    background-color: #FACAC0;
+}

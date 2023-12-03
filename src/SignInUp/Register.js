@@ -71,79 +71,81 @@ const Register = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='lg:w-1/3 w-9/12  shadow-xl mx-auto  mt-4 bg-slate-300 lg:p-8 lg:pb-5 p-8 mb-8'>
-            <div>
-                <p className='text-center text-3xl font-semibold mb-1'>Register Now</p>
-            </div>
-            <form onSubmit={handleSubmit(registerHandler)}>
-                <div className="form-control w-full ">
-                    <label className="label">
-                        <span className="label-text">Your name?</span>
-
-                    </label>
-                    <input
-                        {...register("userName",
-                            {
-                                required: "Name is required"
-                            }
-                        )}
-                        type="text" placeholder="Type Name" className="input input-bordered w-full" />
-                    {
-                        errors.userName && <div className='text-error' type='alert'>{errors.userName?.message}</div>
-                    }
-                </div>
-                <div className="form-control w-full">
-                    <label className="label">
-                        <span className="label-text">Email?</span>
-
-                    </label>
-                    <input
-                        {...register("userEmail",
-                            {
-                                required: "Email is required"
-                            }
-                        )}
-                        type="email" placeholder="Type Email" className="input input-bordered w-full " />
-                    {
-                        errors.userEmail && <div className='text-error' type="alert">
-                            {errors.userEmail?.message}
-                        </div>
-                    }
-
-                </div>
-                <div className="form-control w-full">
-                    <label className="label">
-                        <span className="label-text">Password?</span>
-                    </label>
-                    <input
-                        {...register("userPassword",
-                            {
-                                minLength: { value: 6, message: "Password should be atleast 6 characters" },
-                                pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*?/])(?=.*[0-9])(?=.*[a-z])/, message: "Password must have a uppercase,lowercase,number & special character" }
-
-                            }
-
-                        )}
-                        type="password" placeholder="Type Password" className="input input-bordered w-full " />
-                    {
-                        errors.userPassword && <div className='text-error' type="alert">
-                            {errors.userPassword?.message}
-                        </div>
-                    }
-
-                </div>
+        <div className='bg-[#FACAC0] lg:pt-10 pb-10'>
+            <div className='lg:w-1/3 w-9/12  shadow-xl mx-auto   bg-[white] rounded-lg lg:p-8 lg:pb-5 p-8 pb-8'>
                 <div>
-                    {
-                        error && <div className='text-red-600 mt-4'>{error}</div>
-                    }
+                    <p className='text-center text-3xl font-semibold mb-1 text-black tracking-widest'>Register Now</p>
                 </div>
-                <button type="submit" disabled={processing} className='btn btn-outline mt-8 w-full'>Register</button>
-            </form>
-            <div className="divider">OR</div>
-            <div className='text-center'>
-                <p>Already have an account? <Link to='/login' className='text-primary'>Login</Link></p>
-            </div>
+                <form onSubmit={handleSubmit(registerHandler)}>
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text text-black">Your name?</span>
 
+                        </label>
+                        <input
+                            {...register("userName",
+                                {
+                                    required: "Name is required"
+                                }
+                            )}
+                            type="text" placeholder="Type Name" className="input input-bordered w-full" />
+                        {
+                            errors.userName && <div className='text-error' type='alert'>{errors.userName?.message}</div>
+                        }
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-black">Email?</span>
+
+                        </label>
+                        <input
+                            {...register("userEmail",
+                                {
+                                    required: "Email is required"
+                                }
+                            )}
+                            type="email" placeholder="Type Email" className="input input-bordered w-full " />
+                        {
+                            errors.userEmail && <div className='text-error' type="alert">
+                                {errors.userEmail?.message}
+                            </div>
+                        }
+
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-black">Password?</span>
+                        </label>
+                        <input
+                            {...register("userPassword",
+                                {
+                                    minLength: { value: 6, message: "Password should be atleast 6 characters" },
+                                    pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*?/])(?=.*[0-9])(?=.*[a-z])/, message: "Password must have a uppercase,lowercase,number & special character" }
+
+                                }
+
+                            )}
+                            type="password" placeholder="Type Password" className="input input-bordered w-full " />
+                        {
+                            errors.userPassword && <div className='text-error' type="alert">
+                                {errors.userPassword?.message}
+                            </div>
+                        }
+
+                    </div>
+                    <div>
+                        {
+                            error && <div className='text-red-600 mt-4'>{error}</div>
+                        }
+                    </div>
+                    <button type="submit" disabled={processing} className='btn btn-outline mt-8 w-full text-black hover:bg-black hover:text-white tracking-widest'>Register</button>
+                </form>
+                <div className="divider text-black">OR</div>
+                <div className='text-center text-black'>
+                    <p>Already have an account? <Link to='/login' className='text-primary'>Login</Link></p>
+                </div>
+
+            </div>
         </div>
     );
 };

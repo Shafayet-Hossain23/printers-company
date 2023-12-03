@@ -16,6 +16,7 @@ const Login = () => {
     const [error, setError] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
+
     const from = location.state?.from?.pathname || '/'
     const [tokenEmail, setTokenEmail] = useState('')
     const token = useToken(tokenEmail)
@@ -51,57 +52,59 @@ const Login = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='lg:w-1/3 w-9/12  shadow-xl mx-auto  mt-4 bg-slate-300 lg:p-14  lg:pb-5 p-8 mb-8'>
-            <div>
-                <p className='text-center text-3xl font-semibold mb-5'>Login Now</p>
-            </div>
-            <form onSubmit={handleSubmit(formHandler)} >
-                <div className="form-control w-full">
-                    <label className="label">
-                        <span className="label-text">Your Email?</span>
-
-                    </label>
-                    <input
-                        {...register("userEmail", {
-                            required: "Email is required"
-                        })}
-                        name="userEmail" type="email" placeholder="Email" className="input input-bordered w-full " />
-                    {
-                        errors.userEmail && <div className='text-error' type='alert'>{errors.userEmail?.message}</div>
-                    }
-
+        <div className='bg-[#FACAC0] lg:pt-10 pb-10'>
+            <div className='lg:w-1/3 w-9/12  shadow-xl mx-auto   bg-[white] text-black rounded-lg lg:p-14  lg:pb-5 p-8 mb-8'>
+                <div>
+                    <p className='text-center text-3xl font-semibold mb-5 tracking-widest'>Login Now</p>
                 </div>
-                <div className="form-control w-full">
-                    <label className="label">
-                        <span className="label-text">Your Password?</span>
+                <form onSubmit={handleSubmit(formHandler)} >
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-black">Your Email?</span>
 
-                    </label>
-                    <input
-                        {...register("userPassword", {
-                            required: "Password is required"
-                        })}
-                        type="password" placeholder="Password" className="input input-bordered w-full " />
-                    {
-                        errors.userPassword && <div className='text-error' type='alert'>{errors.userPassword?.message}</div>
-                    }
-                    {/* <label className="label">
+                        </label>
+                        <input
+                            {...register("userEmail", {
+                                required: "Email is required"
+                            })}
+                            name="userEmail" type="email" placeholder="Email" className="input input-bordered w-full " />
+                        {
+                            errors.userEmail && <div className='text-error' type='alert'>{errors.userEmail?.message}</div>
+                        }
+
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-black">Your Password?</span>
+
+                        </label>
+                        <input
+                            {...register("userPassword", {
+                                required: "Password is required"
+                            })}
+                            type="password" placeholder="Password" className="input input-bordered w-full " />
+                        {
+                            errors.userPassword && <div className='text-error' type='alert'>{errors.userPassword?.message}</div>
+                        }
+                        {/* <label className="label">
                         <span className="label-text-alt"></span>
                         <span className="label-text-alt link link-primary">Reset Password</span>
                     </label> */}
 
+                    </div>
+                    <div>
+                        {
+                            error && <div className='text-red-600 mt-4'>{error}</div>
+                        }
+                    </div>
+                    <div>
+                        <button type="submit" disabled={processing} className='btn btn-outline mt-8 w-full text-black hover:bg-black hover:text-white tracking-widest'>Login Now</button>
+                    </div>
+                </form>
+                <div className="divider text-black">OR</div>
+                <div className='text-center text-black'>
+                    <p>New to this website? <Link to='/register' className='text-primary'>Register</Link></p>
                 </div>
-                <div>
-                    {
-                        error && <div className='text-red-600 mt-4'>{error}</div>
-                    }
-                </div>
-                <div>
-                    <button type="submit" disabled={processing} className='btn btn-outline mt-8 w-full'>Login</button>
-                </div>
-            </form>
-            <div className="divider">OR</div>
-            <div className='text-center'>
-                <p>New to this website? <Link to='/register' className='text-primary'>Register</Link></p>
             </div>
         </div>
     );

@@ -2,15 +2,15 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className='flex justify-center lg:mb-14'>
-            <div className='bg-slate-300 lg:w-3/5 lg:p-10 p-5 lg:mt-7 shadow-xl'>
-                <p className='text-center font-bold'>Welcome to the Home. Hope you are doing well !</p>
+        <div className='flex justify-center '>
+            <div className='bg-[#FACAC0] tracking-wider text-black  lg:p-10 p-5  shadow-xl'>
+                <p className='text-center font-bold bg-white p-3 text-black'>👋 Welcome to the Home. Hope you are doing well !</p>
                 <div>
-                    <p className='font-bold mt-7'>Admin Access:</p>
+                    <p className='font-bold mt-7'>🚀 Admin Access:</p>
                     <p>Email : admin@gmail.com</p>
                     <p>Password: 123456As?</p>
                 </div>
-                <p className='font-bold mt-4'>Functionalities: </p>
+                <p className='font-bold mt-4'>🚀 Functionalities: </p>
 
                 <ul className='p-5' style={{ listStyleType: "disc" }}>
                     <li >For visiting the website user must be registration first and able to see home.</li>
@@ -32,7 +32,7 @@ const Home = () => {
                     </li>
                     <li>Admin can download table data as excel file by clicking Export Excel Button</li>
                 </ul>
-                <p className='font-bold'>Used Technologies: </p>
+                <p className='font-bold'>🚀 Used Technologies: </p>
                 <p>
                     React.Js | React-router-dom | Firebase | Tailwind CSS | Node.Js |
                     Express.Js | MongoDB | jwt-authentication | daisyui | react-day-picker | other npm packages.

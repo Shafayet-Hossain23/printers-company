@@ -108,21 +108,23 @@ const ShowAllData = () => {
     }
     return (
         <div>
-            <div className='lg:ml-8 lg:mt-8 ml-3 mt-10 font-bold'>
-                All Data from the begining :
-            </div>
-            <div>
-                {
-                    categoriesInfo.length > 0 && <div className='flex justify-end lg:mr-10 mr-3 lg:mt-0 mt-4'>
-                        <ReactHtmlTableToExcel
-                            id="test-table-xls-button"
-                            className="btn btn-success btn-outline"
-                            table="table-to-xls"
-                            filename="A-Z"
-                            sheet="A-Z"
-                            buttonText="Export Excel" />
-                    </div>
-                }
+            <div className=''>
+                <div className='lg:ml-8 lg:mt-5 ml-3 mt-10 font-bold'>
+                    All Data from the begining :
+                </div>
+                <div>
+                    {
+                        categoriesInfo.length > 0 && <div className='flex justify-end lg:mr-10 mr-3 lg:mt-0 mt-4'>
+                            <ReactHtmlTableToExcel
+                                id="test-table-xls-button"
+                                className="btn btn-success btn-outline"
+                                table="table-to-xls"
+                                filename="A-Z"
+                                sheet="A-Z"
+                                buttonText="Export Excel" />
+                        </div>
+                    }
+                </div>
             </div>
             <div className="divider"></div>
 

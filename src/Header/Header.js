@@ -6,6 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css'
 import { useContext } from 'react';
 import { AuthContext } from '../ContextApi/UserContext';
+import logo1 from './../Asset/printers.png'
 
 const Header = () => {
     const [open, setOpen] = useState(false)
@@ -22,37 +23,60 @@ const Header = () => {
 
     }
     return (
-        <div className='bg-black text-white'>
-            <div onClick={() => setOpen(!open)} className='lg:hidden lg:mx-0 mx-5 py-5'>
-                {
-                    open ? <FontAwesomeIcon icon={faXmark} className='h-7 icon' /> :
-                        <FontAwesomeIcon icon={faBars} className='h-7 icon' ></FontAwesomeIcon>
-                }
+        <div className='bg-[#FACAC0] text-black font-medium tracking-widest'>
+            <div onClick={() => setOpen(!open)} className='lg:hidden lg:mx-0 mx-5  py-5 flex justify-between'>
+                <div>
+                    {
+                        open ? <FontAwesomeIcon icon={faXmark} className='h-7 icon' /> :
+                            <FontAwesomeIcon icon={faBars} className='h-7 icon' ></FontAwesomeIcon>
+                    }
+                </div>
+                <div className='text-lg font-semibold tracking-widest'>
+                    <p >BEST PRINTERS LTD.</p>
+                </div>
             </div>
-            <div className='text-center lg:py-5 '>
-                <ul className={`lg:flex  justify-center lg:static absolute  w-full ulStyle
-               ${open ? 'top-[50px] bg-black' : 'top-[-400px]'}`}>
-                    <li className='lg:mx-10'>
+            <div className='text-center  '>
+                <div className='lg:flex justify-between antialiased  hidden'>
+                    <div className='text-3xl font-semibold pl-10 pt-4'>
+                        <p >Best Printers LTD.</p>
+                    </div>
+                    <div className='bg-black'>
+                        <img className="w-20 h-20 " src={logo1} alt="" />
+                    </div>
+                </div>
+                <ul className={`lg:flex z-50 justify-center lg:static absolute w-full ulStyle pb-5 transition-all duration-300 ${open ? 'top-[50px] bg-[#FACAC0] shadow-xl' : 'top-[-400px]'}`}>
+
+
+                    <li className='lg:mx-10 lg:my-0 my-6'>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "navlink" : undefined
+                            isActive ? "navlink" : 'hoverStyle  p-[10px] hover:duration-500'
                         } to='/'>Home</NavLink>
                     </li>
-                    <li className='lg:mx-10 my-3 lg:my-0 '>
+
+
+                    <li className='lg:mx-10 lg:my-0 my-6'>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "navlink" : undefined
-                        } to='/add'>Add Data</NavLink>
+                            isActive ? "navlink" : 'hoverStyle  p-[10px] hover:duration-500'
+                        } to='/add'>Add Expenses</NavLink>
+
                     </li>
-                    <li className='lg:mx-10'>
+
+                    <li className='lg:mx-10 lg:my-0 my-6'>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "navlink" : undefined
+                            isActive ? "navlink" : 'hoverStyle  p-[10px] hover:duration-500'
                         } to='/dashboard'>Dashboard</NavLink>
                     </li>
+
                     {
-                        user ? <li className='logout lg:mx-10 lg:my-0 my-3 lg:pb-0 pb-5 ' onClick={logOutHandler}>Log Out</li> : <li className='lg:mx-10 my-3 lg:pb-0 pb-5 lg:my-0'>
-                            <NavLink className={({ isActive }) =>
-                                isActive ? "navlink" : undefined
-                            } to='/login'>Login</NavLink>
-                        </li>
+                        user ? <li className='logout lg:mx-10 lg:my-0 my-6 lg:pb-0 pb-5  ' onClick={logOutHandler}>
+                            <NavLink className="hoverStyle hover:duration-500 p-[10px]">Logout</NavLink>
+                        </li> :
+                            <li className='lg:mx-10 lg:my-0 my-6'>
+                                <NavLink className={({ isActive }) =>
+                                    isActive ? "navlink" : ' my-3 lg:pb-0 pb-5 lg:my-0 p-[10px] hoverStyle hover:duration-500'
+                                } to='/login'>Login</NavLink>
+                            </li>
+
                     }
                 </ul>
             </div>

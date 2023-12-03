@@ -127,7 +127,7 @@ const ShowByDate = () => {
     // }
     return (
         <div>
-            <div className='lg:flex lg:ml-24 lg:mt-14 mt-5'>
+            <div className='lg:flex lg:ml-24 lg:mt-5 mt-5'>
                 <div className='lg:ml-0 ml-8 '>
                     <DayPicker
                         mode="single"

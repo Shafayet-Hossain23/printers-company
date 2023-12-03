@@ -134,7 +134,7 @@ const ShowByMonth = () => {
 
     return (
         <div>
-            <div className='lg:ml-8 lg:mt-8 ml-10 mt-10'>
+            <div className='lg:ml-8 lg:mt-5 ml-10 mt-10'>
                 <form onSubmit={collectMonthHandler} >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">

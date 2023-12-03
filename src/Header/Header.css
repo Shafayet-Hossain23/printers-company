@@ -1,6 +1,9 @@
-.ulStyle li:hover {
+.hoverStyle:hover {
     /* color: rgb(220, 200, 21); */
-    color: blueviolet;
+    color: orangered;
+    background: white;
+    padding: 10px;
+
 
 
 }
@@ -11,9 +14,9 @@
 
 .navlink {
     /* color: rgb(220, 200, 21); */
-    color: blueviolet;
-    border: 1px solid;
-    padding: 5px;
+    color: orangered;
+    background: white;
+    padding: 10px;
 }
 
 .logout:hover {

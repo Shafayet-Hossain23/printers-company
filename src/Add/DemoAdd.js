@@ -232,9 +232,9 @@ const DemoAdd = () => {
             })
     }
     return (
-        <div>
-            <div className='lg:flex'>
-                <div className='lg:w-1/6 lg:h-screen lg:sticky top-0  bg-slate-300 '>
+        <div className='lg:mt-0 mt-[-25px] '>
+            <div className=''>
+                {/* <div className='lg:w-1/6 lg:h-screen lg:sticky top-0  bg-slate-300 '>
                     <div className=' '>
                         <p className='text-xl font-bold text-center lg:mt-5 py-2'>{date}</p>
                         <div className='lg:mt-10 text-center lg:pb-0 pb-3'>
@@ -243,35 +243,55 @@ const DemoAdd = () => {
                         </div>
                     </div>
 
-                </div>
-                <div className='lg:w-5/6'>
-                    <div className='lg:flex lg:ml-24 lg:mt-14 mt-5'>
-                        <div className='lg:ml-0 ml-8 '>
-                            <DayPicker
-                                mode="single"
-                                selected={selectedDate}
-                                onSelect={data => {
-                                    if (data) {
-                                        setSelectedDate(data)
-                                    }
-                                }}
-                            />
+                </div> */}
+                <div >
+                    <div className='bg-[#FACAC0]'>
+
+                        {/* <div className="border border-[orangered] mt-3"></div> */}
+                        <div className='lg:flex justify-center lg:ml-24 lg:pt-14 pt-10'>
+                            <div className='lg:block flex justify-center '>
+                                <DayPicker
+                                    mode="single"
+                                    selected={selectedDate}
+                                    onSelect={data => {
+                                        if (data) {
+                                            setSelectedDate(data)
+                                        }
+                                    }}
+                                />
+                            </div>
+                            <div className='lg:ml-64 lg:mt-10 mt-7  lg:block flex justify-center lg:pb-0 pb-10'>
+                                <form>
+
+                                    <div className="lg:form-control lg:block flex ">
+
+
+                                        <div>
+                                            <label className="label ">
+                                                <span className="label-text font-bold">Selected date from calender</span>
+                                            </label>
+                                            <input type="" name='userDate' placeholder="Pick a date from calender" className="input input-bordered lg:w-full w-36 max-w-xs" disabled value={date} />
+                                        </div>
+
+                                        <label onClick={() => { setShowModal(true) }} htmlFor="my-modal-3" className=" bg-[#2d3436] text-white lg:mt-5 mt-9 p-3  hover:cursor-pointer border hover:bg-[white] hover:border rounded-md hover:border-[black] hover:text-black font-semibold tracking-widest hover:duration-500">Add Expenses ➕</label>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div className='lg:ml-64 lg:mt-20 mt-7 ml-10 '>
-                            <form>
-                                <div className="form-control w-full max-w-xs">
-                                    <label className="label">
-                                        <span className="label-text font-bold">Pick a date from calender</span>
-                                    </label>
-                                    <input type="" name='userDate' placeholder="Pick a date from calender" className="input input-bordered w-full max-w-xs" disabled value={date} />
-                                </div>
-                            </form>
+
+                        <div className='flex justify-end lg:pr-10 pr-2 lg:pb-0 pb-10'>
+                            <label className="label ">
+                                <span className="label-text font-bold">⭐ Want to add new Category-
+                                    <label onClick={() => { setShowNewCateModal(true) }} htmlFor="createCateModal" className=" text-primary  rounded-full  hover:cursor-pointer      hover:text-[orangered]  hover:duration-500 hover:tracking-widest "> Click here+</label></span>
+                            </label>
+
                         </div>
+
                     </div>
-                    <div className="divider"></div>
+                    {/* <div className="border border-[orangered] mt-5"></div> */}
                     <div className='mb-10'>
                         {
-                            categoriesInfo.length > 0 ? <div className="overflow-x-auto tableDesign">
+                            categoriesInfo.length > 0 ? <div className="overflow-x-auto tableDesign ">
                                 <table className="table  w-full ">
                                     <thead>
                                         <tr>
@@ -286,7 +306,7 @@ const DemoAdd = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            categoriesInfo && categoriesInfo.map((cateInfo, i) => <tr key={cateInfo._id} className="hover">
+                                            categoriesInfo && categoriesInfo.map((cateInfo, i) => <tr key={cateInfo._id} className="hover ">
                                                 <th>{i + 1}</th>
                                                 <td>{cateInfo?.date}</td>
                                                 <td>{cateInfo?.categoryName}</td>
